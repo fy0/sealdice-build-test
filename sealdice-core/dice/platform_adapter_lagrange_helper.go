@@ -365,7 +365,7 @@ var defaultLagrangeConfig = `
 }
 `
 var defaultLagrangeGocqConfig = `
-account: # 账号相关
+account:
   uin: {账号UIN}
   password: ''
   encrypt: false
