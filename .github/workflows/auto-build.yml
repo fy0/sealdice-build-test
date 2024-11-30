@@ -81,7 +81,7 @@ jobs:
           path: ./lag
 
   lagrange-gocq-download:
-    name: Download Lagrange
+    name: Download Lagrange-Gocq
     runs-on: ubuntu-latest
     needs: commit-num-check
     if: ${{ needs.commit-num-check.outputs.commit-count > 0 }}
