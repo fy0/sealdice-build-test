@@ -184,7 +184,7 @@ jobs:
       - name: Upload
         uses: actions/upload-artifact@v4
         with:
-          name: lagrange.${{ matrix.goos }}-${{ matrix.goarch }}
+          name: lagrange-gocq.${{ matrix.goos }}-${{ matrix.goarch }}
           path: ./extract/lagrange-gocq.${{ matrix.goos }}-${{ matrix.goarch }}
 
   ui-build:
