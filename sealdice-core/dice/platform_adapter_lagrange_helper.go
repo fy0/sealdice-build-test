@@ -526,7 +526,7 @@ func RWLagrangeSignServerUrl(dice *Dice, conn *EndPointInfo, signServerUrl strin
 	} else {
 		err = yaml.Unmarshal(file, &result)
 		if err != nil {
-			dice.Logger.Infof("读取内置客户端配置失败，账号：%s, 原因: %s", conn.UserID, err.Error())
+			dice.Logger.Infof("读取内置gocq配置失败，账号：%s, 原因: %s", conn.UserID, err.Error())
 			return "", ""
 		}
 		if val, ok := result["account"].(map[string]interface{})["sign-servers"].([]interface{})[0].(map[string]interface{})["url"].(string); ok {
