@@ -100,7 +100,7 @@ jobs:
       - name: Upload
         uses: actions/upload-artifact@v4
         with:
-          name: lagrange-gocq
+          name: lagrange
           path: ./lag
 
   lagrange-setup:
