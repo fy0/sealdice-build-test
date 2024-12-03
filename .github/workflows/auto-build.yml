@@ -146,7 +146,7 @@ jobs:
           path: ./extract/Lagrange.OneBot.${{ matrix.goos }}-${{ matrix.goarch }}
 
   lagrange-gocq-setup:
-    name: Download Lagrange
+    name: Download Lagrange-Gocq
     runs-on: ubuntu-latest
     needs: lagrange-gocq-download
     strategy:
