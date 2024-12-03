@@ -814,12 +814,26 @@
         <el-form-item label="账号类型" :label-width="formLabelWidth">
           <el-select v-model="form.accountType">
             <el-option
+              v-if="
+                store.diceServers[0].baseInfo.OS === 'android' ||
+                store.diceServers[0].baseInfo.OS === 'darwin'
+              "
+              label="QQ(内置gocq)"
+              :value="16"
+              :disabled="
+                store.diceServers.length > 0 && store.diceServers[0].baseInfo.containerMode
+              "></el-option>
+            <el-option
               label="QQ(内置客户端)"
               :value="15"
               :disabled="
                 store.diceServers.length > 0 && store.diceServers[0].baseInfo.containerMode
               "></el-option>
             <el-option
+              v-if="
+                store.diceServers[0].baseInfo.OS !== 'android' &&
+                store.diceServers[0].baseInfo.OS !== 'darwin'
+              "
               label="QQ(内置gocq)"
               :value="16"
               :disabled="
