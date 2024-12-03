@@ -2431,15 +2431,17 @@ onBeforeMount(async () => {
     supportedQQVersions.value = ['', ...versionsRes.versions];
   }
 
-  // form.accountType默认账号类型，在android与mac系统中，默认账号类型将为内置gocq，其余系统为内置客户端
-  if (
-    store.diceServers[0].baseInfo.OS === 'android' ||
-    store.diceServers[0].baseInfo.OS === 'darwin'
-  ) {
-    form.accountType = 16;
-  }
-  if (store.diceServers.length > 0 && store.diceServers[0].baseInfo.containerMode) {
-    form.accountType = 6;
+  // form.accountType默认账号类型，在android与mac系统中，默认账号类型为内置gocq，其余系统为内置客户端
+  if (store.diceServers.length > 0) {
+    if (
+      store.diceServers[0].baseInfo.OS === 'android' ||
+      store.diceServers[0].baseInfo.OS === 'darwin'
+    ) {
+      form.accountType = 16;
+    }
+    if (store.diceServers[0].baseInfo.containerMode) {
+      form.accountType = 6;
+    }
   }
 
   timerId = setInterval(async () => {
