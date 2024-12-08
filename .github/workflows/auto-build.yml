@@ -582,19 +582,19 @@ jobs:
         run: |
           bash ./gradlew assembleDebug --stacktrace
 
-      - name: Sign Android release
-        uses: r0adkll/sign-android-release@v1
-        # ID used to access action output
-        id: sign_app
-        with:
-          releaseDirectory: ./sealdice-android/app/build/outputs/apk/debug
-          signingKeyBase64: ${{ secrets.SIGNING_KEY }}
-          alias: ${{ secrets.ALIAS }}
-          keyStorePassword: ${{ secrets.KEY_STORE_PASSWORD }}
-          keyPassword: ${{ secrets.KEY_PASSWORD }}
-        env:
-          # override default build-tools version (29.0.3) -- optional
-          BUILD_TOOLS_VERSION: "34.0.0"
+      # - name: Sign Android release
+      #   uses: r0adkll/sign-android-release@v1
+      #   # ID used to access action output
+      #   id: sign_app
+      #   with:
+      #     releaseDirectory: ./sealdice-android/app/build/outputs/apk/debug
+      #     signingKeyBase64: ${{ secrets.SIGNING_KEY }}
+      #     alias: ${{ secrets.ALIAS }}
+      #     keyStorePassword: ${{ secrets.KEY_STORE_PASSWORD }}
+      #     keyPassword: ${{ secrets.KEY_PASSWORD }}
+      #   env:
+      #     # override default build-tools version (29.0.3) -- optional
+      #     BUILD_TOOLS_VERSION: "34.0.0"
 
       - name: Rename Apk
         working-directory: ./sealdice-android
