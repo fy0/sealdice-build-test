@@ -35,7 +35,7 @@ jobs:
         run: if [ $(git log --oneline --since '24 hours ago' | wc -l) <= 0 ]; then echo $NO_BUILD_PROMPT; fi
 
     outputs:
-      commit-count: ${{ steps.get-commits.outputs.NEW_COMMIT_COUNT }}
+      commit-count: 1
       CORE_CID: ${{ steps.get-commit-ids.outputs.CORE_CID }}
       UI_CID: ${{ steps.get-commit-ids.outputs.UI_CID }}
       ANDROID_VERSION: ${{ steps.get-commit-ids.outputs.ANDROID_VERSION }}
